@@ -1,13 +1,20 @@
 import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
-import { CreateLocationDto } from './create-location.dto';
 
-export class CreateBuildingDto {
+export class CreateLocationDto {
   @IsNotEmpty()
   @IsString()
   name: string;
 
+  @IsNotEmpty()
+  @IsString()
+  number: string;
+
+  @IsNotEmpty()
+  @IsString()
+  area: string;
+
   @ValidateNested({ each: true })
   @Type(() => CreateLocationDto)
-  locations: CreateLocationDto[];
+  childLocations?: CreateLocationDto[];
 }
