@@ -8,18 +8,18 @@ export class BuildingsController {
   constructor(private readonly buildingsService: BuildingsService) {}
 
   @Post()
-  create(@Body() createBuildingDto: CreateBuildingDto) {
-    return this.buildingsService.create(createBuildingDto);
+  async create(@Body() createBuildingDto: CreateBuildingDto) {
+    return await this.buildingsService.create(createBuildingDto);
   }
 
   @Get()
-  findAll() {
-    return this.buildingsService.findAll();
+  async findAll() {
+    return await this.buildingsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.buildingsService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    return await this.buildingsService.findOne(+id);
   }
 
   @Patch(':id')

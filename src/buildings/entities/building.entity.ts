@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
-import { BuildingLocation } from './building-location.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { BuildingLocation } from './location.entity';
+import DefaultEntity from './default.entity';
 
-@Entity()
-export class Building extends BaseEntity {
+@Entity('buildings')
+export class Building extends DefaultEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,18 +12,4 @@ export class Building extends BaseEntity {
 
   @OneToMany(() => BuildingLocation, location => location.building)
   locations: BuildingLocation[]
-
-  @CreateDateColumn({
-    default: 'now()',
-    nullable: true,
-    name: 'created_at',
-  })
-  createdAt: Date
-
-  @UpdateDateColumn({
-    default: 'now()',
-    nullable: true,
-    name: 'updated_at',
-  })
-  updatedAt: Date
 }

@@ -3,7 +3,7 @@ import { BuildingsService } from './buildings.service';
 import { BuildingsController } from './buildings.controller';
 import { Building } from './entities/building.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BuildingLocation } from './entities/building-location.entity';
+import { BuildingLocation } from './entities/location.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Building, BuildingLocation])],
