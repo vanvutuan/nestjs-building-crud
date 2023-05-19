@@ -10,6 +10,9 @@ export class Building extends DefaultEntity {
   @Column({ length: 500 })
   name: string;
 
+  @Column({ length: 10 })
+  code: string;
+
   @OneToMany(() => BuildingLocation, location => location.building)
   locations: BuildingLocation[]
 }

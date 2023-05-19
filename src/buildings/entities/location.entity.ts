@@ -17,11 +17,14 @@ export class BuildingLocation extends DefaultEntity {
   @Column({ length: 100 })
   name: string;
 
-  @Column({ length: 20 })
+  @Column({ length: 10 })
+  code: string;
+
+  @Column({ length: 200 })
   number: string;
 
-  @Column({ length: 20 })
-  area: string;
+  @Column('float')
+  area: number;
 
   @TreeParent()
   @JoinColumn({ name: 'parent_location_id' })

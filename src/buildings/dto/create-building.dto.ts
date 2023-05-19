@@ -7,6 +7,10 @@ export class CreateBuildingDto {
   @IsString()
   name: string;
 
+  @IsNotEmpty()
+  @IsString()
+  code: string;
+
   @ValidateNested({ each: true })
   @Type(() => CreateLocationDto)
   @IsArray()

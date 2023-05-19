@@ -1,4 +1,4 @@
-import { IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsArray, IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class CreateLocationDto {
@@ -8,11 +8,13 @@ export class CreateLocationDto {
 
   @IsNotEmpty()
   @IsString()
+  code: string;
+
   number: string;
 
   @IsNotEmpty()
-  @IsString()
-  area: string;
+  @IsNumber()
+  area: number;
 
   @ValidateNested({ each: true })
   @IsArray()

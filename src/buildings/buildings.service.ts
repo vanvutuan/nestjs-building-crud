@@ -1,6 +1,6 @@
-import { BadRequestException, HttpException, Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DataSource, In, QueryRunner, Repository, TreeRepository } from 'typeorm';
+import { DataSource, In, Repository, TreeRepository } from 'typeorm';
 import { Building } from './entities/building.entity';
 import { BuildingLocation } from './entities/location.entity';
 import { CreateBuildingDto } from './dto/create-building.dto';
@@ -28,6 +28,7 @@ export class BuildingsService {
     const building = this.buildingRepository.create({...createBuildingDto});
     await building.save();
     await this.createLocations(createBuildingDto?.locations, null, building);
+    return await this.getBuildingLocationTree(building);
   }
 
   async findAll() {
@@ -54,7 +55,7 @@ export class BuildingsService {
 
   async remove(id: number, locationId = null): Promise<void>{
     const building = await this.findOne(id);
-    const locations = await this.getAllLocations(building, locationId);
+    const locations = await this.getAllLocations(building);
     const queryRunner = this.dataSource.createQueryRunner();
 
     await queryRunner.connect();
@@ -78,6 +79,11 @@ export class BuildingsService {
       return;
     }
     for (let locationData of locations) {
+      if (parentLocation == null) {
+        locationData.number = building.code + '-' + locationData.code;
+      } else {
+        locationData.number = parentLocation.number + '-' + locationData.code;
+      }
       const location = this.locationRepository.create({...locationData, building, parentLocation})
       await location.save();
       await this.createLocations(locationData?.locations, location, building);
@@ -104,7 +110,7 @@ export class BuildingsService {
       .getMany();
   }
 
-  private async getAllLocations(building: Building, locationId: number): Promise<BuildingLocation[]> {
+  private async getAllLocations(building: Building): Promise<BuildingLocation[]> {
     return await this.locationRepository
       .createQueryBuilder("locations")
       .innerJoinAndSelect("locations.building", "buildings")
