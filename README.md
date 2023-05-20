@@ -32,18 +32,18 @@ A simple CRUD application using [Nest](https://github.com/nestjs/nest) as backbo
 
 ### Postman Collection (include examples)
 
-Please import this [file](nestjs-buildings-crud.postman_collection.json) to Postman to have quickly at the application without setting the project up.
+Please import this [file](nestjs-buildings-crud.postman_collection.json) to Postman to quickly have look of the input/output of the application without setting the project up.
 
 ## Prepare enviroments
 
 ```bash
-# Install nvm
+# Install nvm, after finishing, close the terminal window and re-open it
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-# Close the terminal windows and re-open it
-# Then install and use NodeJS v16.
+# Install NodeJS v16 LTS
 $ nvm install v16
 
+# Switch to NodeJS v16
 $ nvm use v16
 
 # Asumming that you have docker installed. Just start the PostgreSQL using below command
