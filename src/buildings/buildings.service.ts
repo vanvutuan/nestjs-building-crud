@@ -3,6 +3,7 @@ import {
   ConflictException,
   Injectable,
   InternalServerErrorException,
+  NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, In, Repository, TreeRepository } from 'typeorm';
@@ -46,7 +47,13 @@ export class BuildingsService {
   }
 
   async findOne(id: number, populateData = true) {
-    const building = await this.buildingRepository.findOneByOrFail({ id: id });
+    const building = await this.buildingRepository.findOne({
+      where: { id: id },
+    });
+
+    if (!building) {
+      throw new NotFoundException(`Couldn't found building ID ${id}`);
+    }
 
     if (!populateData) {
       return building;

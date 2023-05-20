@@ -1,13 +1,17 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { WinstonModule } from 'nest-winston';
+import { APP_FILTER } from '@nestjs/core';
 
 import configuration from './config/configuration';
 import validation from './config/configuration.validation';
-import dbConnection from './shared/dbConnection';
+import { dbConnectionFactory } from './shared/db-connection';
+import { winstonLogFactory } from './shared/winston.service';
+import { HttpExceptionFilter } from './shared/http-exception.filter';
 
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { BuildingsModule } from './buildings/buildings.module';
 
 @Module({
@@ -20,8 +24,13 @@ import { BuildingsModule } from './buildings/buildings.module';
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: dbConnection,
       inject: [ConfigService],
+      useFactory: dbConnectionFactory,
+    }),
+    WinstonModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: winstonLogFactory,
     }),
     BuildingsModule,
   ],

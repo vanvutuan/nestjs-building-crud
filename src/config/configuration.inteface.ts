@@ -10,4 +10,5 @@ interface DbConfig {
 interface AppConfig {
   port: string;
   env: string;
+  logPath: string;
 }

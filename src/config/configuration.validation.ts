@@ -7,6 +7,7 @@ export default () => {
       .default('development')
       .required(),
     PORT: Joi.number().required(),
+    LOG_PATH: Joi.string().required(),
     DB_HOST: Joi.string().required(),
     DB_PORT: Joi.number().required(),
     DB_USERNAME: Joi.string().required(),
