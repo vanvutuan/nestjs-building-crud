@@ -1,5 +1,5 @@
-import { ConfigService } from "@nestjs/config";
-import { TypeOrmModuleOptions } from "@nestjs/typeorm";
+import { ConfigService } from '@nestjs/config';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export default (configService: ConfigService): TypeOrmModuleOptions => {
   const dbConfig = configService.get<DatabaseConfig>('database');
@@ -13,5 +13,5 @@ export default (configService: ConfigService): TypeOrmModuleOptions => {
     database: dbConfig.name,
     synchronize: appConfig.env == 'development' ? true : false,
     autoLoadEntities: true,
-  }
-}
+  };
+};

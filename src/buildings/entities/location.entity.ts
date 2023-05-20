@@ -1,16 +1,23 @@
 import {
-  Entity, Tree, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, TreeChildren, TreeParent
+  Entity,
+  Tree,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+  TreeChildren,
+  TreeParent,
 } from 'typeorm';
 import { Building } from './building.entity';
 import DefaultEntity from './default.entity';
 
 @Entity('locations')
-@Tree("closure-table")
+@Tree('closure-table')
 export class BuildingLocation extends DefaultEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Building, building => building.locations)
+  @ManyToOne(() => Building, (building) => building.locations)
   @JoinColumn({ name: 'building_id' })
   building: Building;
 
@@ -31,5 +38,5 @@ export class BuildingLocation extends DefaultEntity {
   parentLocation: BuildingLocation;
 
   @TreeChildren()
-  childLocation: BuildingLocation[]
+  childLocation: BuildingLocation[];
 }

@@ -1,12 +1,12 @@
 interface DatabaseConfig {
-    host: string,
-    port: number,
-    username: string,
-    password: string,
-    name: string,
+  host: string;
+  port: number;
+  username: string;
+  password: string;
+  name: string;
 }
 
 interface ApplicationConfig {
-    port: string,
-    env: string,
+  port: string;
+  env: string;
 }
