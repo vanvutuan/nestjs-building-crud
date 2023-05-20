@@ -24,7 +24,37 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A simple CRUD application using [Nest](https://github.com/nestjs/nest) as backbone, implement a [Closure table](https://technobytz.com/closure_table_store_hierarchical_data.html) to storing `Buildings` with their levels and locations using PostgreSQL. Other options to store hierarchical data in a relational database could be found at this [link](https://www.slideshare.net/billkarwin/models-for-hierarchical-data?from_action=save)
+
+### SQL diagram
+
+![SQL diagram](diagram.png)
+
+### Postman Collection (include examples)
+
+Please import this [file](nestjs-buildings-crud.postman_collection.json) to Postman to have quickly at the application without setting the project up.
+
+## Prepare enviroments
+
+```bash
+# Install nvm
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Close the terminal windows and re-open it
+# Then install and use NodeJS v16.
+$ nvm install v16
+
+$ nvm use v16
+
+# Asumming that you have docker installed. Just start the PostgreSQL using below command
+$ docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+# Go to the root folder of source code after finish cloning
+$ cd nestjs-building-crud
+
+# Copy the enviroment from .env.sample
+$ cp .env.sample .env
+```
 
 ## Installation
 
@@ -61,12 +91,6 @@ $ npm run test:cov
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 

@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "649b8205-b341-4395-ab3d-70493096f7e7",
+		"name": "nestjs-buildings-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2162493"
+	},
+	"item": [
+		{
+			"name": "create new building",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Building C\",\n    \"code\": \"C\",\n    \"locations\": [\n        {\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"area\": 150000,\n            \"locations\": [\n                {\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"area\": 10200,\n                    \"locations\": [\n                        {\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"area\": 5,\n                            \"locations\": []\n                        },\n                        {\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"area\": 5,\n                            \"locations\": []\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"area\": 12200,\n                    \"locations\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"area\": 140000,\n            \"locations\": [\n                {\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"area\": 10200,\n                    \"locations\": [\n                        {\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"area\": 5,\n                            \"locations\": [\n                                {\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"area\": 1,\n                                    \"locations\": []\n                                },\n                                {\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"area\": 1,\n                                    \"locations\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"area\": 5,\n                            \"locations\": []\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/buildings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buildings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create new building - example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Building C\",\n    \"code\": \"C\",\n    \"locations\": [\n        {\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"area\": 150000,\n            \"locations\": [\n                {\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"area\": 10200,\n                    \"locations\": [\n                        {\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"area\": 5,\n                            \"locations\": []\n                        },\n                        {\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"area\": 5,\n                            \"locations\": []\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"area\": 12200,\n                    \"locations\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"area\": 140000,\n            \"locations\": [\n                {\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"area\": 10200,\n                    \"locations\": [\n                        {\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"area\": 5,\n                            \"locations\": [\n                                {\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"area\": 1,\n                                    \"locations\": []\n                                },\n                                {\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"area\": 1,\n                                    \"locations\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"area\": 5,\n                            \"locations\": []\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/buildings",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2003"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7d3-ATsL+5z+9VWMckolJ9jUFrUBB/Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 12:13:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Building C\",\n    \"code\": \"C\",\n    \"locations\": [\n        {\n            \"createdAt\": \"2023-05-20T05:13:03.676Z\",\n            \"updatedAt\": \"2023-05-20T05:13:03.676Z\",\n            \"id\": 53,\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"number\": \"C-05\",\n            \"area\": 150000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T05:13:03.679Z\",\n                    \"updatedAt\": \"2023-05-20T05:13:03.679Z\",\n                    \"id\": 54,\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"number\": \"C-05-UR\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T05:13:03.683Z\",\n                            \"updatedAt\": \"2023-05-20T05:13:03.683Z\",\n                            \"id\": 55,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"C-05-UR-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T05:13:03.686Z\",\n                            \"updatedAt\": \"2023-05-20T05:13:03.686Z\",\n                            \"id\": 56,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"C-05-UR-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T05:13:03.688Z\",\n                    \"updatedAt\": \"2023-05-20T05:13:03.688Z\",\n                    \"id\": 57,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"C-05-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T05:13:03.693Z\",\n            \"updatedAt\": \"2023-05-20T05:13:03.693Z\",\n            \"id\": 58,\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"number\": \"C-06\",\n            \"area\": 140000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T05:13:03.696Z\",\n                    \"updatedAt\": \"2023-05-20T05:13:03.696Z\",\n                    \"id\": 59,\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"number\": \"C-06-R1\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T05:13:03.698Z\",\n                            \"updatedAt\": \"2023-05-20T05:13:03.698Z\",\n                            \"id\": 60,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"C-06-R1-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": [\n                                {\n                                    \"createdAt\": \"2023-05-20T05:13:03.701Z\",\n                                    \"updatedAt\": \"2023-05-20T05:13:03.701Z\",\n                                    \"id\": 61,\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"number\": \"C-06-R1-Desk1-Tuan\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                },\n                                {\n                                    \"createdAt\": \"2023-05-20T05:13:03.705Z\",\n                                    \"updatedAt\": \"2023-05-20T05:13:03.705Z\",\n                                    \"id\": 62,\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"number\": \"C-06-R1-Desk1-Vy\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T05:13:03.707Z\",\n                            \"updatedAt\": \"2023-05-20T05:13:03.707Z\",\n                            \"id\": 63,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"C-06-R1-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"createdAt\": \"2023-05-20T05:13:03.674Z\",\n    \"updatedAt\": \"2023-05-20T05:13:03.674Z\",\n    \"id\": 35\n}"
+				}
+			]
+		},
+		{
+			"name": "buildings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/buildings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buildings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all building - example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/buildings",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"77-28R4Z+Ylwln5lo+8Crc6+qMOPc8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 11:56:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"createdAt\": \"2023-05-20T01:19:52.220Z\",\n        \"updatedAt\": \"2023-05-20T01:19:52.220Z\",\n        \"id\": 2,\n        \"name\": \"building C\",\n        \"code\": \"c\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get one building by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/buildings/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buildings",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get a building - example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/buildings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"87d-ofd2fNDScoPIaFWzQvjPmKfn4+M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 11:57:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-05-20T01:19:52.220Z\",\n    \"updatedAt\": \"2023-05-20T01:19:52.220Z\",\n    \"id\": 2,\n    \"name\": \"building C\",\n    \"code\": \"c\",\n    \"locations\": [\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.224Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.224Z\",\n            \"id\": 17,\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"number\": \"c-05\",\n            \"area\": 150,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"id\": 18,\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"number\": \"c-05-UR\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"id\": 19,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-05-UR-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"id\": 20,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-05-UR-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"id\": 21,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-05-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.243Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.243Z\",\n            \"id\": 22,\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"number\": \"c-06\",\n            \"area\": 140000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"id\": 23,\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"number\": \"c-06-R1\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"id\": 24,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-06-R1-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": [\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"id\": 25,\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"number\": \"c-06-R1-Desk1-Tuan\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                },\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"id\": 26,\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"number\": \"c-06-R1-Desk1-Vy\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"id\": 27,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-06-R1-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"id\": 28,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-06-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update building info by ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"ABC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/buildings/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buildings",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update building info - example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ABC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/buildings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2166"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"876-N+X9XnhjT5jIa3jxUF4YBOe523A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 11:59:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-05-20T01:19:52.220Z\",\n    \"updatedAt\": \"2023-05-20T04:59:32.846Z\",\n    \"id\": 2,\n    \"name\": \"ABC\",\n    \"code\": \"c\",\n    \"locations\": [\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.224Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.224Z\",\n            \"id\": 17,\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"number\": \"c-05\",\n            \"area\": 150,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"id\": 18,\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"number\": \"c-05-UR\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"id\": 19,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-05-UR-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"id\": 20,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-05-UR-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"id\": 21,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-05-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.243Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.243Z\",\n            \"id\": 22,\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"number\": \"c-06\",\n            \"area\": 140000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"id\": 23,\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"number\": \"c-06-R1\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"id\": 24,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-06-R1-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": [\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"id\": 25,\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"number\": \"c-06-R1-Desk1-Tuan\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                },\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"id\": 26,\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"number\": \"c-06-R1-Desk1-Vy\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"id\": 27,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-06-R1-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"id\": 28,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-06-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"name": "add new level - example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Level\",\n    \"code\": \"07\",\n    \"area\": 10300,\n    \"locations\": [\n        {\n            \"name\": \"WC\",\n            \"code\": \"WC1\",\n            \"area\": 5,\n            \"locations\": []\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/buildings/2/locations",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings",
+								"2",
+								"locations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2493"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9bd-oCG5S5sze4YQDan4wHpwmCRuyOk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 12:03:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-05-20T01:19:52.220Z\",\n    \"updatedAt\": \"2023-05-20T04:59:32.846Z\",\n    \"id\": 2,\n    \"name\": \"ABC\",\n    \"code\": \"c\",\n    \"locations\": [\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.224Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.224Z\",\n            \"id\": 17,\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"number\": \"c-05\",\n            \"area\": 150,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"id\": 18,\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"number\": \"c-05-UR\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"id\": 19,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-05-UR-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"id\": 20,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-05-UR-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"id\": 21,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-05-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.243Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.243Z\",\n            \"id\": 22,\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"number\": \"c-06\",\n            \"area\": 140000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"id\": 23,\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"number\": \"c-06-R1\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"id\": 24,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-06-R1-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": [\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"id\": 25,\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"number\": \"c-06-R1-Desk1-Tuan\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                },\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"id\": 26,\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"number\": \"c-06-R1-Desk1-Vy\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"id\": 27,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-06-R1-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"id\": 28,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-06-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T05:03:12.526Z\",\n            \"updatedAt\": \"2023-05-20T05:03:12.526Z\",\n            \"id\": 50,\n            \"name\": \"New Level\",\n            \"code\": \"07\",\n            \"number\": \"c-07\",\n            \"area\": 10300,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T05:03:12.533Z\",\n                    \"updatedAt\": \"2023-05-20T05:03:12.533Z\",\n                    \"id\": 51,\n                    \"name\": \"WC\",\n                    \"code\": \"WC1\",\n                    \"number\": \"c-07-WC1\",\n                    \"area\": 5,\n                    \"childLocation\": []\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"name": "add new location - example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"WC 2\",\n    \"code\": \"WC2\",\n    \"area\": 5,\n    \"locations\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/buildings/2/locations/50",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings",
+								"2",
+								"locations",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2656"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a60-/QUb0Xa11udo+54B0JG96veZGoE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 12:05:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-05-20T01:19:52.220Z\",\n    \"updatedAt\": \"2023-05-20T04:59:32.846Z\",\n    \"id\": 2,\n    \"name\": \"ABC\",\n    \"code\": \"c\",\n    \"locations\": [\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.224Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.224Z\",\n            \"id\": 17,\n            \"name\": \"Level 5\",\n            \"code\": \"05\",\n            \"number\": \"c-05\",\n            \"area\": 150,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.229Z\",\n                    \"id\": 18,\n                    \"name\": \"Utility Room\",\n                    \"code\": \"UR\",\n                    \"number\": \"c-05-UR\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.233Z\",\n                            \"id\": 19,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-05-UR-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.237Z\",\n                            \"id\": 20,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-05-UR-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.240Z\",\n                    \"id\": 21,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-05-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T01:19:52.243Z\",\n            \"updatedAt\": \"2023-05-20T01:19:52.243Z\",\n            \"id\": 22,\n            \"name\": \"Level 6\",\n            \"code\": \"06\",\n            \"number\": \"c-06\",\n            \"area\": 140000,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.246Z\",\n                    \"id\": 23,\n                    \"name\": \"Room 1\",\n                    \"code\": \"R1\",\n                    \"number\": \"c-06-R1\",\n                    \"area\": 10200,\n                    \"childLocation\": [\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.249Z\",\n                            \"id\": 24,\n                            \"name\": \"Desk 1\",\n                            \"code\": \"Desk1\",\n                            \"number\": \"c-06-R1-Desk1\",\n                            \"area\": 5,\n                            \"childLocation\": [\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.253Z\",\n                                    \"id\": 25,\n                                    \"name\": \"Tuan\",\n                                    \"code\": \"Tuan\",\n                                    \"number\": \"c-06-R1-Desk1-Tuan\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                },\n                                {\n                                    \"createdAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"updatedAt\": \"2023-05-20T01:19:52.255Z\",\n                                    \"id\": 26,\n                                    \"name\": \"Vy\",\n                                    \"code\": \"Vy\",\n                                    \"number\": \"c-06-R1-Desk1-Vy\",\n                                    \"area\": 1,\n                                    \"childLocation\": []\n                                }\n                            ]\n                        },\n                        {\n                            \"createdAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"updatedAt\": \"2023-05-20T01:19:52.258Z\",\n                            \"id\": 27,\n                            \"name\": \"Desk 2\",\n                            \"code\": \"Desk2\",\n                            \"number\": \"c-06-R1-Desk2\",\n                            \"area\": 5,\n                            \"childLocation\": []\n                        }\n                    ]\n                },\n                {\n                    \"createdAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"updatedAt\": \"2023-05-20T01:19:52.260Z\",\n                    \"id\": 28,\n                    \"name\": \"Sanitary Room\",\n                    \"code\": \"SR\",\n                    \"number\": \"c-06-SR\",\n                    \"area\": 12200,\n                    \"childLocation\": []\n                }\n            ]\n        },\n        {\n            \"createdAt\": \"2023-05-20T05:03:12.526Z\",\n            \"updatedAt\": \"2023-05-20T05:03:12.526Z\",\n            \"id\": 50,\n            \"name\": \"New Level\",\n            \"code\": \"07\",\n            \"number\": \"c-07\",\n            \"area\": 10300,\n            \"childLocation\": [\n                {\n                    \"createdAt\": \"2023-05-20T05:03:12.533Z\",\n                    \"updatedAt\": \"2023-05-20T05:03:12.533Z\",\n                    \"id\": 51,\n                    \"name\": \"WC\",\n                    \"code\": \"WC1\",\n                    \"number\": \"c-07-WC1\",\n                    \"area\": 5,\n                    \"childLocation\": []\n                },\n                {\n                    \"createdAt\": \"2023-05-20T05:05:18.524Z\",\n                    \"updatedAt\": \"2023-05-20T05:05:18.524Z\",\n                    \"id\": 52,\n                    \"name\": \"WC 2\",\n                    \"code\": \"WC2\",\n                    \"number\": \"c-07-WC2\",\n                    \"area\": 5,\n                    \"childLocation\": []\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "remove entire building by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/buildings/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"buildings",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "remove a buiilding - example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/buildings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buildings",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 May 2023 12:07:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
