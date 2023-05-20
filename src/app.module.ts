@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 
 import configuration from './config/configuration';
 import validation from './config/configuration.validation';
-import databaseConnection from './shared/databaseConnection';
+import dbConnection from './shared/dbConnection';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BuildingsModule } from './buildings/buildings.module';
@@ -20,7 +20,7 @@ import { BuildingsModule } from './buildings/buildings.module';
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: databaseConnection,
+      useFactory: dbConnection,
       inject: [ConfigService],
     }),
     BuildingsModule,

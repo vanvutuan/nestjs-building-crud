@@ -1,8 +1,8 @@
 import {
   BadRequestException,
+  ConflictException,
   Injectable,
   InternalServerErrorException,
-  NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, In, Repository, TreeRepository } from 'typeorm';
@@ -29,7 +29,7 @@ export class BuildingsService {
       where: { name: createBuildingDto.name },
     });
     if (existBuilding) {
-      throw new BadRequestException(
+      throw new ConflictException(
         `Building name ${createBuildingDto.name} already exists!`,
       );
     }
@@ -115,8 +115,10 @@ export class BuildingsService {
       await queryRunner.manager.remove(building);
       await queryRunner.commitTransaction();
     } catch (err) {
-      console.log('error: ', err);
       await queryRunner.rollbackTransaction();
+      throw new InternalServerErrorException(
+        `Couldn't finish removing building ID ${id}. Nothing changed after this.`,
+      );
     } finally {
       await queryRunner.release();
     }
@@ -127,7 +129,7 @@ export class BuildingsService {
     parentLocation: BuildingLocation,
     building: Building,
   ) {
-    if (!locations) {
+    if (!locations || locations.length == 0) {
       return;
     }
     for (let locationData of locations) {
@@ -149,7 +151,7 @@ export class BuildingsService {
   private async getBuildingLocationTree(building: Building) {
     building.locations = [];
 
-    const buildingLevels = await this.getAllLevels(building.id);
+    const buildingLevels = await this.getAllLocations(building.id, true);
 
     for (let level of buildingLevels) {
       var locationTree = await this.locationRepository.findDescendantsTree(
@@ -160,19 +162,18 @@ export class BuildingsService {
     return building;
   }
 
-  private async getAllLevels(buildingId: number): Promise<BuildingLocation[]> {
-    return await this.locationRepository
-      .createQueryBuilder('locations')
-      .where(`building_id = ${buildingId} and parent_location_id is NULL`)
-      .getMany();
-  }
-
   private async getAllLocations(
     buildingId: number,
+    onlyRootLevel = false,
   ): Promise<BuildingLocation[]> {
-    return await this.locationRepository
+    const query = this.locationRepository
       .createQueryBuilder('locations')
-      .where(`building_id = ${buildingId}`)
-      .getMany();
+      .where(`building_id = ${buildingId}`);
+
+    if (onlyRootLevel) {
+      query.andWhere('parent_location_id is NULL');
+    }
+
+    return await query.getMany();
   }
 }

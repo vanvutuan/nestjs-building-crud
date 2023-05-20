@@ -1,4 +1,5 @@
-interface DatabaseConfig {
+interface DbConfig {
+  type: string;
   host: string;
   port: number;
   username: string;
@@ -6,7 +7,7 @@ interface DatabaseConfig {
   name: string;
 }
 
-interface ApplicationConfig {
+interface AppConfig {
   port: string;
   env: string;
 }
