@@ -62,6 +62,20 @@ export class BuildingsService {
     return await this.getBuildingLocationTree(building);
   }
 
+  async findLocations(id: number, locationId: number) {
+    const existBuilding = await this.findOne(id, false);
+
+    const location = await this.locationRepository.findOne({
+      where: { id: locationId },
+    });
+
+    if (!location) {
+      throw new NotFoundException(`Couldn't found location ID ${id}`);
+    }
+
+    return await this.locationRepository.findDescendants(location);
+  }
+
   async update(id: number, updateBuildingDto: UpdateBuildingDto) {
     const existBuilding = await this.findOne(id, false);
     delete updateBuildingDto.locations;

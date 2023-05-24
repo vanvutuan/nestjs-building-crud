@@ -32,6 +32,14 @@ export class BuildingsController {
     return await this.buildingsService.findOne(id);
   }
 
+  @Get(':id/locations/:locationId')
+  async findLocation(
+    @Param('id', ParseIntPipe) id: number,
+    @Param('locationId', ParseIntPipe) locationId: number,
+  ) {
+    return await this.buildingsService.findLocations(id, locationId);
+  }
+
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
